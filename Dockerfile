@@ -1,6 +1,6 @@
 FROM python:3
 
-LABEL app=docker-source
+LABEL app=my-app
 
 WORKDIR /usr/src/myapp
 
@@ -14,7 +14,7 @@ ENV FLASK_APP=app.py
 
 EXPOSE 5000
 
-COPY app/ .
+COPY . .
 
 #ENTRYPOINT ["flask run --host 0.0.0.0 --port 5000"]
 CMD ["/usr/local/bin/flask", "run", "--host", "0.0.0.0", "--port", "5000"]
